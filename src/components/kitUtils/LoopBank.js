@@ -11,8 +11,8 @@ import styled from 'styled-components';
 const LoopBankContainer= styled.div`
 display: flex;
 flex-direction: column;
-min-height: 16em;
-max-height: 16em;
+min-height: 18em;
+max-height: 18em;
 overflow-x: hidden;
 overflow-y: scroll;
 background-color: ${({ theme }) => theme.nav};

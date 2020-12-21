@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const RegionEditContainer= styled.div`
 display: flex;
 flex-direction: column;
-min-height: 11.5em;
-max-height: 11.5em;
+min-height: 13.5em;
+max-height: 13.5em;
 overflow-x: hidden;
 overflow-y: scroll;
 align-items: center;

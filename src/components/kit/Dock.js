@@ -1,4 +1,6 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
+import HelpContext from '../../context/help/helpContext';
+
 import styled from 'styled-components';
 import { TitleContainer } from '../../css/TitleContainer';
 
@@ -28,51 +30,21 @@ const Header = styled.div`
   }
 `
 
-const SavedRegionsContainer = styled.div`
+const ShortcutsContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.body};
-  height: 33%;
+  height: 60%;
   margin: 4px;
   border-radius: 0.25em;
   overflow: scroll;
-`
-
-const BrowseKitsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: ${({ theme }) => theme.body};
-  height: 33%;
-  margin: 4px;
-  border-radius: 0.25em;
-  overflow: scroll;
-`
-
-const DockRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 2px 3px;
-  margin: 4px;
-  background-color: ${({ theme }) => theme.nav};
-  font-size: 11px;
-  border-radius: 0.25em;
-  transition: all 250ms ease 0s;
-  & > svg {
-    margin: 3px 5px;
-    height:0.8rem; 
-    width: 0.8rem;
-    fill: white;
-  }
-  &:hover{
-    background-color: rgba(255, 255, 255, 0.2);
-  }
 `
 
 const HelpContainer = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.nav};
   color: ${({ theme }) => theme.text};
-  height: 26%;
+  height: 33%;
   margin: 4px;
   padding: 5px;
   font-size: 11px;
@@ -80,20 +52,18 @@ const HelpContainer = styled.div`
 `
 
 const Dock = memo(() => {
+  const helpContext = useContext(HelpContext);
+  const { msg } = helpContext;
 
   return (
     <DockContainer>
-      <TitleContainer>Social</TitleContainer>
-      <SavedRegionsContainer>
-        <Header>Saved Regions</Header>
+      <TitleContainer>Help</TitleContainer>
+      <ShortcutsContainer>
+        <Header>Keyboard Shortcuts</Header>
         
-      </SavedRegionsContainer>
-      <BrowseKitsContainer>
-        <Header>Kits</Header>
-        
-      </BrowseKitsContainer>
+      </ShortcutsContainer>
       <HelpContainer>
-
+        <span>{msg}</span>
       </HelpContainer>
     </DockContainer>
   )

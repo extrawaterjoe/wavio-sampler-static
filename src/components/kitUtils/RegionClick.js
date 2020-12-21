@@ -41,76 +41,16 @@ const RemoveRegionButton = styled.button`
   }
 `
 
-const CreateRegionForm = styled.form`
-  display: flex;
-  place-items: center;
-  flex-direction: column;
-`
-
-const RegionNameInput = styled.input`
-  display: flex;
-  margin: 3px;
-  padding: 5px;
-  font-family: inherit;
-  background-color: ${({ theme }) => theme.body};
-  color: ${({ theme }) => theme.text};
-  border: 1px dotted white;
-  border-radius: 0.25em;
-  place-items: center;
-`
-
-const RegionSubmit = styled.input`
-  font-family: inherit;
-  font-size: 10px;
-  color: ${({ theme }) => theme.text};
-  background-color: ${({ theme }) => theme.nav};
-  border: 1px solid white;
-  border-radius: 0.25em;
-  margin: 2px;
-  padding: 0.3rem;
-  width: 90%;
-  text-align: center;
-  transition: all 250ms ease 0s;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-`
-
 const RegionClick = () => {
   const sampleContext = useContext(SampleContext);
-  const { 
-    loadedKit,
+  const {
     clickedRegion, 
     clearClickedRegion, 
-    removeSelectedRegion,
-    createRegion
+    removeSelectedRegion
   } = sampleContext;
   
   const helpContext = useContext(HelpContext);
-  const { setMsg } = helpContext
-  
-  const [region, setRegion] = useState({ name: '' });
-
-  const { name } = region;
-
-  const onChange = e => setRegion({...region, [e.target.name]: e.target.value});
-
-  const onSubmit = e => {
-    e.preventDefault();
-    if (name === '' || !clickedRegion) {
-      // set alert
-      console.log('set alert for failed region save');
-    } else {
-      const { start, end } = clickedRegion;
-      const { id } = loadedKit;
-      createRegion({
-        name: name,
-        kit: id,
-        start: start,
-        end: end,
-      });
-    };
-  };
+  const { setMsg } = helpContext;
 
   if(!clickedRegion) {
     return <RegionEditContainer />
@@ -127,27 +67,6 @@ const RegionClick = () => {
           <span>Remove</span>
         </RemoveRegionButton>
       </RowContainer>
-
-      {!loadedKit ? <></> :
-      <CreateRegionForm onSubmit={onSubmit}>
-      <RegionNameInput 
-      name="name" 
-      type="text" 
-      placeholder="Region Name" 
-      value={name} 
-      onChange={onChange}
-      className="text-input"
-      required
-      />
-      <RegionSubmit 
-      type="submit" 
-      value="Save Region" 
-      onMouseOver={() => setMsg("saveRegion")}
-      onMouseOut={() => setMsg("clear")}
-      />
-
-      </CreateRegionForm>
-      }
     </RegionEditContainer>
   )
 };

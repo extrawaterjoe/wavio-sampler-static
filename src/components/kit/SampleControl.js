@@ -1,16 +1,12 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import SampleContext from '../../context/sample/sampleContext';
-import HelpContext from '../../context/help/helpContext';
 //
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
 import { TitleContainer } from '../../css/TitleContainer';
 //
 import RegionCreator from '../kitUtils/RegionCreator';
 import RegionHover from '../kitUtils/RegionHover';
 import RegionClick from '../kitUtils/RegionClick';
-//
-import {ReactComponent as UploadIcon} from '../../css/icons/upload.svg'
 
 const SampleControlContainer = styled.div`
   grid-row-start: 1;
@@ -21,39 +17,6 @@ const SampleControlContainer = styled.div`
   margin-top: 2rem;
   border-radius: 6px;
   background-color: ${({ theme }) => theme.secondary};
-`
-
-const blink = keyframes`
-  0% {
-    fill: white;
-    margin-right: 1px;
-    height: 0.8rem; 
-    width: 0.8rem;
-  }
-
-  50% {
-    fill: red;
-    margin-right: 0px;
-    height: 0.9rem; 
-    width: 0.9rem;
-  }
-
-  100% {
-    fill: white;
-    margin-right: 1px;
-    height: 0.8rem; 
-    width: 0.8rem;
-  }
-`
-
-const NotUploadedIcon = styled(UploadIcon)`
-  animation: ${blink} 1s ease infinite;
-`
-
-const UploadedIcon = styled(UploadIcon)`
-  height:0.9rem; 
-  width: 0.9rem;
-  fill: green;
 `
 
 const RemoveAllRegionsButton = styled.button`
@@ -79,10 +42,7 @@ const RemoveAllRegionsButton = styled.button`
 
 const SampleControl = () => {
   const sampleContext = useContext(SampleContext);
-  const { loadedKit, removeAllRegions } = sampleContext;
-
-  const helpContext = useContext(HelpContext);
-  const { setMsg } = helpContext;
+  const { removeAllRegions } = sampleContext;
 
   return (
     <SampleControlContainer>
