@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {ReactComponent as SunIcon} from '../css/icons/sun.svg';
-import {ReactComponent as MoonIcon} from '../css/icons/moon.svg';
+import {ReactComponent as SunIcon} from '../../css/icons/sun.svg';
+import {ReactComponent as MoonIcon} from '../../css/icons/moon.svg';
 
 const Nav = styled.nav`
 background-color: ${({ theme }) => theme.nav};
@@ -61,7 +61,7 @@ export const Navbar = ({ toggleTheme, theme }) => {
 
   return (
     <Nav>
-      <span>Wavio Sampler</span>
+      <span>Wavio Sampler Lite</span>
       <NavSpace>
         <ToggleButton onClick={toggleTheme}>
           {

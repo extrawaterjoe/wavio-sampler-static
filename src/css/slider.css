@@ -1,0 +1,29 @@
+/* input[type=range]{
+  border: 1px solid transparent; 
+  width: 150px;
+}
+
+input[type=range]::-moz-range-track {
+  width: 150px;
+  height: 16px;
+  background: none;
+  border: none;
+  border-radius: 3px;
+} */
+
+input[type=range]::-moz-range-thumb {
+  /* border: none; */
+  /* height: 14px; */
+  width: 16px;
+  /* border-radius: 10%; */
+  /* background-color: rgb(54, 53, 68); */
+} 
+
+/* input[type=range]:-moz-focusring{
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+input[type=range]:focus::-moz-range-track {
+  background: none;
+}  */
