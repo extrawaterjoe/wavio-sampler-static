@@ -1,12 +1,14 @@
 import { Navbar } from './components/layout/Navbar'
 
 import Kit from './components/kit/Kit';
+import Mobile from './components/layout/Mobile';
 
 import { GlobalStyles } from './css/global';
 import { lightTheme, darkTheme } from './css/theme';
 import Container from './css/container'
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from './hooks/useDarkMode';
+import { isMobile } from "react-device-detect";
 
 import KitState from './context/kit/KitState';
 import SampleState from './context/sample/SampleState';
@@ -20,6 +22,14 @@ const App = () => {
   if (!componentMounted) {
     return <div />
   };
+
+  if (isMobile) {
+    return (
+      <Container>
+        <Mobile />
+      </Container>
+    )
+  }
 
   return (
     <KitState>
