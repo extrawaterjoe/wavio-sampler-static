@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import SampleContext from '../../context/sample/sampleContext';
 import HelpContext from '../../context/help/helpContext';
 

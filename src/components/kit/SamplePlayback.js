@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import SampleContext from '../../context/sample/sampleContext';
 import HelpContext from '../../context/help/helpContext';
 import styled from 'styled-components';
@@ -68,7 +68,7 @@ const RecordButton = styled.button`
 
 const SamplePlayback = ({ ...props }) => {
   const sampleContext = useContext(SampleContext);
-  const { setRecord, setRecording, ejectSample } = sampleContext;
+  const { sampleBlob, setRecord, setRecording, ejectSample } = sampleContext;
 
   const helpContext = useContext(HelpContext);
   const { setMsg } = helpContext;
@@ -80,6 +80,21 @@ const SamplePlayback = ({ ...props }) => {
     rateSlider,
     zoomSlider,
   } = props;
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if(!sampleBlob) { return };
+      if (e.key === 'r') {
+        handleRecord();
+      };
+      if (e.code === 'Space') {
+        pauseSample();
+      };
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [setRecord])
 
   const handleRecord = () => {
     setRecord(!setRecording);

@@ -1,10 +1,7 @@
 // import types
 import {
-  UPLOAD_SAMPLE,
   LOAD_SAMPLE,
   EJECT_SAMPLE,
-  CREATE_KIT,
-  CREATE_REGION,
   ADD_REGION,
   SET_REGIONS,
   SET_RECORD,
@@ -13,8 +10,7 @@ import {
   CLICK_REGION,
   CLEAR_CLICK,
   REMOVE_REGION,
-  REMOVEALL_REGIONS,
-  WAVE_COLOR 
+  REMOVEALL_REGIONS
 } from "../types";
 
 // eslint-disable-next-line

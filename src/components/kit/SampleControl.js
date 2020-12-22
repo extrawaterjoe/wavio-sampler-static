@@ -47,7 +47,7 @@ const SampleControl = () => {
   return (
     <SampleControlContainer>
       <TitleContainer>
-        <span>Options</span>
+        <span>Regions</span>
       </TitleContainer>
         <>
         <RegionCreator />

@@ -181,9 +181,9 @@ const SampleStation = memo(() => {
 
   const recordInput = () => {
     if(!sampleBlob) { return; };
-    setLoopBlob(null);
-
+    
     if(setRecording) {
+      setLoopBlob(null);
       let recordedChunks = [];
   
       mediaRecorder.current.start();
