@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import SampleContext from '../../context/sample/sampleContext';
 import HelpContext from '../../context/help/helpContext';
 
@@ -24,13 +24,25 @@ const RegionAddContainer = styled.div`
 
 const RegionCreator = () => {
   const sampleContext = useContext(SampleContext);
-  const { sampleBlob, loadedKit, addRegion, sampleRegions } = sampleContext;
+  const { sampleBlob, addRegion, sampleRegions } = sampleContext;
 
   const helpContext = useContext(HelpContext);
   const { setMsg } = helpContext;
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if(!sampleBlob) { return };
+      if (e.shiftKey && e.key === '+') {
+        addRegion();
+      };
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  });
+
   const onClick = () => {
-    if(!sampleBlob && !loadedKit) { return; };
+    if(!sampleBlob) { return; };
     if(sampleRegions.length === 8) { return; }; 
     addRegion();
   };

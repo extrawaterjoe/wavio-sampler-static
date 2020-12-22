@@ -38,6 +38,10 @@ const ShortcutsContainer = styled.div`
   margin: 4px;
   border-radius: 0.25em;
   overflow: scroll;
+  & > span {
+    margin: 5px;
+    font-size: 10px;
+  }
 `
 
 const HelpContainer = styled.div`
@@ -60,7 +64,15 @@ const Dock = memo(() => {
       <TitleContainer>Help</TitleContainer>
       <ShortcutsContainer>
         <Header>Keyboard Shortcuts</Header>
-        
+          <span></span>
+          <span>Play/Pause Sample : Spacebar</span>
+          <span>Toggle Record : r</span>
+          <span>Add Region : Shift + =</span>
+          <span>Remove All Regions : Shift + delete</span>
+          <span></span>
+          <span>Play/Pause Clip : a</span>
+          <span>Edit Clip : e</span>
+          <span>Capture Clip : c</span>
       </ShortcutsContainer>
       <HelpContainer>
         <span>{msg}</span>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import SampleContext from '../../context/sample/sampleContext';
 //
 import styled from 'styled-components';
@@ -43,6 +43,17 @@ const RemoveAllRegionsButton = styled.button`
 const SampleControl = () => {
   const sampleContext = useContext(SampleContext);
   const { removeAllRegions } = sampleContext;
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.shiftKey && e.key === 'Backspace') {
+        removeAllRegions();
+      };
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  });
 
   return (
     <SampleControlContainer>
