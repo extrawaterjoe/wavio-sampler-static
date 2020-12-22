@@ -15,6 +15,9 @@ import SampleState from './context/sample/SampleState';
 import LoopState from './context/loop/LoopState';
 import HelpState from './context/help/HelpState';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize(process.env.GOOGLEANALYTICS);
+
 const App = () => {
   const [theme, toggleTheme, componentMounted] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
