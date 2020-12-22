@@ -1,6 +1,6 @@
 export const lightTheme = {
   nav: '#9fb1c9',
-  body: '#b8c6d9',
+  body: '#abb9cc',
   secondary: '#d0d5db',
 
   text: '#000000',

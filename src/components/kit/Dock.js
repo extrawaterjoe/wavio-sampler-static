@@ -40,7 +40,7 @@ const ShortcutsContainer = styled.div`
   overflow: scroll;
   & > span {
     margin: 5px;
-    font-size: 10px;
+    font-size: 11px;
   }
 `
 
@@ -69,6 +69,7 @@ const Dock = memo(() => {
           <span>Toggle Record : r</span>
           <span>Add Region : Shift + =</span>
           <span>Remove All Regions : Shift + delete</span>
+          <span>Trigger Region : 1-8</span>
           <span></span>
           <span>Play/Pause Clip : a</span>
           <span>Edit Clip : e</span>

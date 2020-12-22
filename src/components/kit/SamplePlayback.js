@@ -94,6 +94,7 @@ const SamplePlayback = ({ ...props }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line
   }, [setRecord])
 
   const handleRecord = () => {

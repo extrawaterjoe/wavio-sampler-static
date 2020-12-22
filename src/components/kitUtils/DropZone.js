@@ -63,7 +63,7 @@ const DropZone = (props) => {
   } = useDropzone({
     accept: 'audio/*',  
     maxFiles: 1,
-    maxSize: 10000000
+    maxSize: 30000000
   });
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const DropZone = (props) => {
         })}>
         <input {...getInputProps()} />
         <DropText>
-          DRAG-N-DROP AN AUDIO FILE OR CLICK TO SELECT (10MB LIMIT)
+          DRAG-N-DROP AN AUDIO FILE OR CLICK TO SELECT (30MB LIMIT)
         </DropText>
       </DropContainer>
   )
