@@ -12,7 +12,7 @@ const MobileMessage = styled.div`
 const Mobile = () => {
   return (
     <MobileMessage>
-      This application does not currently support mobile use. 
+      This application is currently only compatible on desktop browsers. I'm working on mobile compatability. Thank you.  
     </MobileMessage>
   )
 }

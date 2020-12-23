@@ -55,6 +55,12 @@ const HelpContainer = styled.div`
   border-radius: 0.25em;
 `
 
+const HelpHeader = styled.div`
+  margin-left: 4px;
+  font-size: 13px;
+  color: #ff6600;
+`
+
 const Dock = memo(() => {
   const helpContext = useContext(HelpContext);
   const { msg } = helpContext;
@@ -65,12 +71,14 @@ const Dock = memo(() => {
       <ShortcutsContainer>
         <Header>Keyboard Shortcuts</Header>
           <span></span>
+          <HelpHeader>Sample Shortcuts</HelpHeader>
           <span>Play/Pause Sample : Spacebar</span>
           <span>Toggle Record : r</span>
           <span>Add Region : Shift + =</span>
           <span>Remove All Regions : Shift + delete</span>
           <span>Trigger Region : 1-8</span>
           <span></span>
+          <HelpHeader>Clip Shortcuts</HelpHeader>
           <span>Play/Pause Clip : a</span>
           <span>Edit Clip : e</span>
           <span>Capture Clip : c</span>
