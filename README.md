@@ -17,8 +17,6 @@ In-browser audio sampler: create downloadable clips and sequences from samples o
 - 🎧 Build sequences from recorded clips
 - 💾 Download clips and sequences
 
-## Getting started 
-
 ## Keyboard shortcuts
 Keyboard shortcuts to help speed up your workflow. 
 
