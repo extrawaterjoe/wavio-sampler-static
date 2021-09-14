@@ -7,7 +7,7 @@
 
 In-browser audio sampler: create downloadable clips and sequences from samples of your choice.   
 
-🌊  [https://waviosampler.netlify.app](https://waviosampler.netlify.app) 🌊
+🌊⚡  [https://waviosampler.netlify.app](https://waviosampler.netlify.app) ⚡🌊
 
 ## Features
 
